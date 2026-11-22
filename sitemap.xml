@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://YOURDOMAIN.com/</loc></url>
-<url><loc>https://YOURDOMAIN.com/merge-pdf.html</loc></url>
-<url><loc>https://YOURDOMAIN.com/split-pdf.html</loc></url>
-<url><loc>https://YOURDOMAIN.com/delete-pdf-pages.html</loc></url>
-<url><loc>https://YOURDOMAIN.com/rotate-pdf.html</loc></url>
-<url><loc>https://YOURDOMAIN.com/jpg-to-pdf.html</loc></url>
-<url><loc>https://YOURDOMAIN.com/compress-pdf.html</loc></url>
-<url><loc>https://YOURDOMAIN.com/pdf-to-jpg.html</loc></url>
-<url><loc>https://YOURDOMAIN.com/add-page-numbers-to-pdf.html</loc></url>
-<url><loc>https://YOURDOMAIN.com/watermark-pdf.html</loc></url>
+<url><loc>https://lusifarmiyan.github.io/pdfswift/</loc></url>
+<url><loc>https://lusifarmiyan.github.io/pdfswift/merge-pdf.html</loc></url>
+<url><loc>https://lusifarmiyan.github.io/pdfswift/split-pdf.html</loc></url>
+<url><loc>https://lusifarmiyan.github.io/pdfswift/delete-pdf-pages.html</loc></url>
+<url><loc>https://lusifarmiyan.github.io/pdfswift/rotate-pdf.html</loc></url>
+<url><loc>https://lusifarmiyan.github.io/pdfswift/jpg-to-pdf.html</loc></url>
+<url><loc>https://lusifarmiyan.github.io/pdfswift/compress-pdf.html</loc></url>
+<url><loc>https://lusifarmiyan.github.io/pdfswift/pdf-to-jpg.html</loc></url>
+<url><loc>https://lusifarmiyan.github.io/pdfswift/add-page-numbers-to-pdf.html</loc></url>
+<url><loc>https://lusifarmiyan.github.io/pdfswift/watermark-pdf.html</loc></url>
 </urlset>
