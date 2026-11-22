@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JPG to PDF Converter Free – Images to PDF | PDFSwift</title>
+<meta name="description" content="Turn JPG and PNG photos into one PDF. Perfect for scans, receipts and forms. Free, no upload.">
+<link rel="canonical" href="https://YOURDOMAIN.com/jpg-to-pdf.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+<style>
+:root{--bg:#E8EDF7;--ink:#12203A;--mute:#55627C;--line:#CBD5E6;--card:#fff;--acc:#1F5FFF;--acc2:#0B3FC4;--accd:#0A2F96;--ok:#0E8A4F;--okd:#075C34;--err:#C62828}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#fff 0,var(--bg) 60%);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;max-width:1000px;margin:auto}
+.logo{font-weight:900;font-size:22px;letter-spacing:-.5px;text-shadow:0 2px 0 #fff,0 4px 8px rgba(18,32,58,.15)}
+.logo b{color:var(--acc)}
+.badge{font-size:13px;color:var(--ok);font-weight:700;background:#fff;padding:6px 12px;border-radius:99px;box-shadow:0 3px 0 var(--line),0 8px 16px rgba(18,32,58,.08)}
+.hero{max-width:1000px;margin:auto;padding:24px 20px 8px;display:grid;grid-template-columns:1.2fr .8fr;gap:10px;align-items:center}
+h1{font-size:clamp(30px,6.5vw,54px);line-height:1.05;margin:0 0 12px;letter-spacing:-1.5px;text-shadow:0 2px 0 #fff,0 6px 14px rgba(18,32,58,.14)}
+.hero p{color:var(--mute);max-width:520px;margin:0}
+.stage{height:230px;perspective:900px;display:flex;align-items:center;justify-content:center}
+.stack{position:relative;width:130px;height:170px;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(-38deg);animation:fl 6s ease-in-out infinite}
+.sheet{position:absolute;inset:0;border-radius:10px;background:#fff;border:2px solid var(--line);box-shadow:-10px 14px 24px rgba(18,32,58,.25);padding:16px 12px}
+.sheet i{display:block;height:6px;border-radius:3px;background:var(--line);margin-bottom:9px}
+.sheet i:nth-child(2){width:70%}.sheet i:nth-child(3){width:85%}
+.sheet.s1{transform:translateZ(0)}
+.sheet.s2{transform:translateZ(34px);background:#F3F7FF}
+.sheet.s3{transform:translateZ(68px);background:var(--acc);border-color:var(--accd)}
+.sheet.s3 b{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;color:#fff;font:900 30px system-ui}
+@keyframes fl{50%{transform:rotateX(58deg) rotateZ(-30deg) translateZ(14px)}}
+.grid{max-width:1000px;margin:22px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;perspective:1000px}
+.tool{background:var(--card);border:0;border-radius:16px;padding:16px 14px;text-align:left;font:inherit;color:inherit;cursor:pointer;min-height:96px;box-shadow:0 6px 0 var(--line),0 14px 24px rgba(18,32,58,.12);transition:transform .15s,box-shadow .15s;transform-style:preserve-3d;will-change:transform}
+.tool:hover{box-shadow:0 8px 0 var(--acc),0 18px 28px rgba(31,95,255,.25)}
+.tool:active{transform:translateY(5px)!important;box-shadow:0 1px 0 var(--line),0 4px 8px rgba(18,32,58,.12)}
+.tool.on{background:#EAF0FF;box-shadow:0 6px 0 var(--acc),0 16px 28px rgba(31,95,255,.28)}
+.tool strong{display:block;font-size:16px;transform:translateZ(18px)}
+.tool span{font-size:13px;color:var(--mute);display:block;transform:translateZ(10px)}
+.tool.soon{opacity:.55;cursor:default;box-shadow:0 4px 0 var(--line)}
+.tool.soon:hover{box-shadow:0 4px 0 var(--line)}
+#work{max-width:1000px;margin:0 auto 40px;padding:0 20px}
+.panel{background:var(--card);border-radius:20px;padding:22px;box-shadow:0 8px 0 var(--line),0 24px 48px rgba(18,32,58,.15)}
+.panel h2{margin:0 0 4px;font-size:24px}
+.panel p.d{margin:0 0 16px;color:var(--mute);font-size:15px}
+.drop{display:block;border:2px dashed var(--acc);border-radius:16px;padding:30px 16px;text-align:center;background:linear-gradient(#F7F9FF,#E9EFFF);cursor:pointer;box-shadow:inset 0 4px 10px rgba(31,95,255,.12)}
+.drop:focus-visible,.btn:focus-visible,.tool:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #7FA2FF;outline-offset:2px}
+.drop.over{background:#DCE6FF}
+.btn{background:var(--acc);color:#fff;border:0;border-radius:14px;padding:14px 24px;font:700 16px inherit;font-family:inherit;cursor:pointer;min-height:50px;box-shadow:0 6px 0 var(--accd),0 12px 18px rgba(10,47,150,.3);transition:transform .08s,box-shadow .08s}
+.btn:hover{background:var(--acc2)}
+.btn:active{transform:translateY(5px);box-shadow:0 1px 0 var(--accd)}
+.btn:disabled{background:#9AA8C7;box-shadow:0 6px 0 #7C8AAA;cursor:not-allowed}
+.btn.alt{background:var(--ok);box-shadow:0 6px 0 var(--okd),0 12px 18px rgba(7,92,52,.3)}
+.btn.alt:hover{background:#0B7443}
+.btn.alt:active{box-shadow:0 1px 0 var(--okd)}
+ul.files{list-style:none;margin:16px 0;padding:0}
+ul.files li{display:flex;gap:8px;align-items:center;padding:10px 12px;background:#fff;border-radius:12px;margin-bottom:10px;font-size:14px;box-shadow:0 3px 0 var(--line),0 6px 12px rgba(18,32,58,.08)}
+ul.files li span.n{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ul.files button{border:0;background:#EEF2FA;border-radius:9px;min-width:38px;min-height:38px;cursor:pointer;font-size:15px;box-shadow:0 3px 0 var(--line)}
+ul.files button:active{transform:translateY(3px);box-shadow:none}
+.opt{margin:16px 0}
+.opt label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+.opt input,.opt select{width:100%;padding:12px;border:0;background:#F1F4FA;border-radius:12px;font:inherit;box-shadow:inset 0 3px 6px rgba(18,32,58,.15)}
+#msg{margin-top:16px;font-size:15px;min-height:22px}
+#msg.err{color:var(--err)}
+#msg.ok{color:var(--ok);font-weight:600}
+.note{font-size:13px;color:var(--mute);margin-top:10px}
+section.info{max-width:1000px;margin:0 auto;padding:10px 20px 50px;color:var(--mute);font-size:15px}
+section.info ol{padding-left:20px}
+section.info a{color:var(--acc);font-weight:600}
+section.info h2{color:var(--ink);font-size:20px}
+footer{text-align:center;padding:24px;font-size:13px;color:var(--mute);border-top:1px solid var(--line)}
+@media(max-width:700px){.hero{grid-template-columns:1fr}.stage{height:190px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stack{animation:none}.tool,.btn{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">PDF<b>Swift</b></div>
+  <div class="badge">Private: runs in your browser</div>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>Convert JPG to PDF free online</h1>
+    <p>Turn JPG and PNG photos into one PDF. Perfect for scans, receipts and forms. Free, no upload.</p>
+  </div>
+  <div class="stage" aria-hidden="true"><div class="stack">
+    <div class="sheet s1"><i></i><i></i><i></i></div>
+    <div class="sheet s2"><i></i><i></i><i></i></div>
+    <div class="sheet s3"><b>PDF</b></div>
+  </div></div>
+</div>
+
+<nav class="grid" id="grid" aria-label="PDF tools"></nav>
+
+<main id="work">
+  <div class="panel" id="panel"></div>
+</main>
+
+<section class="info"><h2>How to convert JPG to PDF</h2><ol><li>Choose one or more JPG or PNG images.</li><li>Reorder them with the arrows.</li><li>Tap Create PDF and download your file.</li></ol><h2>Questions</h2><p><strong>Which image types work?</strong><br>JPG, JPEG and PNG.</p><p><strong>Is each image one page?</strong><br>Yes. Each image becomes one page at its original size.</p><h2>More free PDF tools</h2><p><a href="merge-pdf.html">Merge PDF</a> · <a href="split-pdf.html">Split PDF</a> · <a href="delete-pdf-pages.html">Delete PDF Pages</a> · <a href="rotate-pdf.html">Rotate PDF</a> · <a href="compress-pdf.html">Compress PDF</a> · <a href="pdf-to-jpg.html">PDF to JPG</a> · <a href="add-page-numbers-to-pdf.html">Add Page Numbers</a> · <a href="watermark-pdf.html">Watermark PDF</a></p></section><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which image types work?", "acceptedAnswer": {"@type": "Answer", "text": "JPG, JPEG and PNG."}}, {"@type": "Question", "name": "Is each image one page?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each image becomes one page at its original size."}}]}</script>
+<footer>© <span id="yr"></span> PDFSwift · Free PDF tools</footer>
+
+<script>window.PAGE_TOOL='img2pdf'</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+$('#yr').textContent = new Date().getFullYear();
+// If the PDF engine (pdf-lib CDN) fails to load, the page must still show
+// the tool grid and a clear message instead of a blank page.
+const PDFLibOK = !!window.PDFLib;
+const {PDFDocument, degrees, StandardFonts, rgb} = window.PDFLib || {};
+if(window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+const TOOLS = {
+  merge:  {name:'Merge PDF', d:'Join several PDFs into one.', accept:'.pdf,application/pdf', multi:true, btn:'Merge PDFs'},
+  split:  {name:'Split PDF', d:'Pull out pages or a range into a new PDF.', accept:'.pdf,application/pdf', multi:false, btn:'Extract pages',
+           opt:{id:'pages', label:'Pages to keep (example: 1-3, 5, 8-10)', ph:'1-3, 5'}},
+  delete: {name:'Delete Pages', d:'Remove pages you do not need.', accept:'.pdf,application/pdf', multi:false, btn:'Delete pages',
+           opt:{id:'pages', label:'Pages to delete (example: 2, 4-6)', ph:'2, 4-6'}},
+  rotate: {name:'Rotate PDF', d:'Rotate every page.', accept:'.pdf,application/pdf', multi:false, btn:'Rotate PDF', sel:[['90','90° right'],['180','180°'],['270','90° left']]},
+  img2pdf:{name:'JPG to PDF', d:'Turn JPG or PNG images into one PDF.', accept:'image/jpeg,image/png,.jpg,.jpeg,.png', multi:true, btn:'Create PDF'},
+  optimize:{name:'Compress PDF', d:'Light optimization. Re-saves the PDF with a leaner structure.', accept:'.pdf,application/pdf', multi:false, btn:'Optimize PDF',
+           note:'Light compression only. Image-heavy PDFs may not shrink much. Strong compression comes in version 2.'},
+  pdf2jpg:{name:'PDF to JPG', d:'Convert every page into a sharp JPG image.', accept:'.pdf,application/pdf', multi:false, btn:'Convert to JPG'},
+  pagenum:{name:'Page Numbers', d:'Add page numbers to every page.', accept:'.pdf,application/pdf', multi:false, btn:'Add numbers',
+           sel:[['c','Bottom center'],['r','Bottom right'],['l','Bottom left']]},
+  watermark:{name:'Watermark', d:'Stamp text diagonally across every page.', accept:'.pdf,application/pdf', multi:false, btn:'Add watermark',
+           opt:{id:'pages', label:'Watermark text', ph:'CONFIDENTIAL'}}
+};
+const SLUG = {"merge": "merge-pdf", "split": "split-pdf", "delete": "delete-pdf-pages", "rotate": "rotate-pdf", "img2pdf": "jpg-to-pdf", "optimize": "compress-pdf", "pdf2jpg": "pdf-to-jpg", "pagenum": "add-page-numbers-to-pdf", "watermark": "watermark-pdf"};
+const SOON = ['PDF to Word','Word to PDF','Protect PDF','Unlock PDF','Sign PDF','Edit PDF'];
+
+let cur = null, files = [], blobUrl = null;
+
+// Build tool grid
+const grid = $('#grid');
+Object.entries(TOOLS).forEach(([k,t]) => {
+  const b = document.createElement('button');
+  b.className = 'tool'; b.dataset.k = k;
+  b.innerHTML = `<strong>${t.name}</strong><span>${t.d}</span>`;
+  b.onclick = () => { location.href = SLUG[k] + '.html'; };
+  grid.appendChild(b);
+});
+SOON.forEach(n => {
+  const b = document.createElement('button');
+  b.className = 'tool soon'; b.disabled = true;
+  b.innerHTML = `<strong>${n}</strong><span>Coming soon</span>`;
+  grid.appendChild(b);
+});
+
+function open(k){
+  if(!TOOLS[k]) k = 'merge';
+  cur = k; files = [];
+  const t = TOOLS[k];
+  
+  document.querySelectorAll('.tool').forEach(b => b.classList.toggle('on', b.dataset.k === k));
+  if(!PDFLibOK){
+    $('#panel').innerHTML = `<h2>${t.name}</h2><p class="d">${t.d}</p><div id="msg" class="err">PDF engine failed to load. Check your connection and refresh the page.</div>`;
+    return;
+  }
+  let opts = '';
+  if(t.opt) opts = `<div class="opt"><label for="o">${t.opt.label}</label><input id="o" placeholder="${t.opt.ph}" inputmode="text"></div>`;
+  if(t.sel) opts = `<div class="opt"><label for="o">${cur==='rotate'?'Rotation':'Position'}</label><select id="o">${t.sel.map(x=>`<option value="${x[0]}">${x[1]}</option>`).join('')}</select></div>`;
+  $('#panel').innerHTML = `
+    <h2>${t.name}</h2><p class="d">${t.d}</p>
+    <label class="drop" id="drop" tabindex="0">
+      <strong>Tap to choose ${t.multi?'files':'a file'}</strong><br><span class="note">or drop here</span>
+      <input type="file" id="f" accept="${t.accept}" ${t.multi?'multiple':''} hidden>
+    </label>
+    <ul class="files" id="list"></ul>
+    ${opts}
+    <button class="btn" id="go" disabled>${t.btn}</button>
+    <div id="msg" role="status"></div>
+    ${t.note?`<p class="note">${t.note}</p>`:''}`;
+  const f = $('#f'), drop = $('#drop');
+  f.onchange = () => add([...f.files]);
+  drop.onkeydown = e => { if(e.key==='Enter'||e.key===' '){e.preventDefault();f.click();} };
+  drop.ondragover = e => {e.preventDefault();drop.classList.add('over');};
+  drop.ondragleave = () => drop.classList.remove('over');
+  drop.ondrop = e => {e.preventDefault();drop.classList.remove('over');add([...e.dataTransfer.files]);};
+  $('#go').onclick = run;
+}
+
+function add(list){
+  const t = TOOLS[cur];
+  list = list.filter(f => cur==='img2pdf' ? /^image\/(jpeg|png)$/.test(f.type) : f.type==='application/pdf' || /\.pdf$/i.test(f.name));
+  if(!list.length) return say('Please choose a supported file type.','err');
+  files = t.multi ? files.concat(list) : [list[0]];
+  render(); say('');
+}
+function render(){
+  const ul = $('#list'); ul.innerHTML = '';
+  files.forEach((f,i) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<span class="n"></span><small>${(f.size/1024/1024).toFixed(2)} MB</small>`;
+    li.querySelector('.n').textContent = f.name;
+    if(TOOLS[cur].multi){
+      [['↑',-1],['↓',1]].forEach(([s,d]) => {
+        const b = document.createElement('button'); b.textContent = s; b.setAttribute('aria-label', d<0?'Move up':'Move down');
+        b.onclick = () => { const j=i+d; if(j<0||j>=files.length) return; [files[i],files[j]]=[files[j],files[i]]; render(); };
+        li.appendChild(b);
+      });
+    }
+    const x = document.createElement('button'); x.textContent = '✕'; x.setAttribute('aria-label','Remove');
+    x.onclick = () => { files.splice(i,1); render(); };
+    li.appendChild(x); ul.appendChild(li);
+  });
+  $('#go').disabled = !files.length || (cur==='merge' && files.length<2);
+}
+function say(m,c){ const e=$('#msg'); e.textContent=m; e.className=c||''; }
+
+function parseRanges(s, max){
+  const out = new Set();
+  s.split(',').map(x=>x.trim()).filter(Boolean).forEach(p => {
+    const m = p.match(/^(\d+)(?:\s*-\s*(\d+))?$/);
+    if(!m) throw new Error(`"${p}" is not valid. Use numbers like 1-3, 5.`);
+    let a = +m[1], b = m[2] ? +m[2] : a;
+    if(a>b) [a,b]=[b,a];
+    if(a<1 || b>max) throw new Error(`Page numbers must be between 1 and ${max}.`);
+    for(let i=a;i<=b;i++) out.add(i-1);
+  });
+  return [...out].sort((x,y)=>x-y);
+}
+const buf = f => f.arrayBuffer();
+function pngToJpeg(data){
+  return new Promise((res, rej) => {
+    const url = URL.createObjectURL(new Blob([data],{type:'image/png'}));
+    const im = new Image();
+    im.onload = () => {
+      const c = document.createElement('canvas'); c.width = im.width; c.height = im.height;
+      c.getContext('2d').drawImage(im, 0, 0);
+      URL.revokeObjectURL(url);
+      c.toBlob(b => b ? res(b.arrayBuffer()) : rej(new Error('Image convert failed')), 'image/jpeg', .92);
+    };
+    im.onerror = () => { URL.revokeObjectURL(url); rej(new Error('Image convert failed')); };
+    im.src = url;
+  });
+}
+
+async function run(){
+  const go = $('#go'); go.disabled = true;
+  if(!PDFLibOK && cur!=='pdf2jpg'){ say('PDF engine failed to load. Check your connection and refresh the page.','err'); go.disabled = false; return; }
+  say('Working…');
+  try{
+    let bytes, name = 'pdfswift-result.pdf';
+    if(cur==='pdf2jpg'){ await toJpg(); go.disabled=false; return; }
+    if(cur==='merge'){
+      const out = await PDFDocument.create();
+      for(const f of files){
+        const d = await PDFDocument.load(await buf(f));
+        (await out.copyPages(d, d.getPageIndices())).forEach(p => out.addPage(p));
+      }
+      bytes = await out.save(); name = 'merged.pdf';
+    }
+    else if(cur==='split' || cur==='delete'){
+      const d = await PDFDocument.load(await buf(files[0]));
+      const n = d.getPageCount();
+      const val = $('#o').value;
+      if(!val.trim()) throw new Error('Enter page numbers first.');
+      let keep = parseRanges(val, n);
+      if(cur==='delete'){ const del = new Set(keep); keep = d.getPageIndices().filter(i=>!del.has(i)); }
+      if(!keep.length) throw new Error('No pages left to save.');
+      const out = await PDFDocument.create();
+      (await out.copyPages(d, keep)).forEach(p => out.addPage(p));
+      bytes = await out.save(); name = cur==='split' ? 'extracted.pdf' : 'pages-deleted.pdf';
+    }
+    else if(cur==='rotate'){
+      const d = await PDFDocument.load(await buf(files[0]));
+      const a = +$('#o').value;
+      d.getPages().forEach(p => p.setRotation(degrees((p.getRotation().angle + a) % 360)));
+      bytes = await d.save(); name = 'rotated.pdf';
+    }
+    else if(cur==='img2pdf'){
+      const out = await PDFDocument.create();
+      for(const f of files){
+        const data = await buf(f);
+        let img;
+        try{
+          img = f.type==='image/png' ? await out.embedPng(data) : await out.embedJpg(data);
+        }catch(e){
+          // Some PNGs (interlaced / 16-bit) fail in pdf-lib: redraw as JPG and retry.
+          img = await out.embedJpg(await pngToJpeg(data));
+        }
+        out.addPage([img.width, img.height]).drawImage(img,{x:0,y:0,width:img.width,height:img.height});
+      }
+      bytes = await out.save(); name = 'images.pdf';
+    }
+    else if(cur==='pagenum'||cur==='watermark'){
+      const d = await PDFDocument.load(await buf(files[0]));
+      const font = await d.embedFont(StandardFonts.HelveticaBold);
+      const pos = $('#o')?.value, txt = (document.getElementById('o')||{}).value;
+      const pages = d.getPages(), n = pages.length;
+      if(cur==='watermark' && !txt.trim()) throw new Error('Enter the watermark text.');
+      pages.forEach((p,i) => {
+        const {width:w, height:h} = p.getSize();
+        if(cur==='pagenum'){
+          const t = `${i+1} / ${n}`, sz = 11, tw = font.widthOfTextAtSize(t,sz);
+          const x = pos==='l' ? 30 : pos==='r' ? w-30-tw : (w-tw)/2;
+          p.drawText(t,{x,y:20,size:sz,font,color:rgb(.2,.2,.2)});
+        } else {
+          const sz = Math.min(80, (w*0.8)/Math.max(txt.length,4)*1.6), tw = font.widthOfTextAtSize(txt,sz);
+          const a = Math.atan2(h,w), c = Math.cos(a), s2 = Math.sin(a);
+          p.drawText(txt,{x:w/2 - (tw/2)*c, y:h/2 - (tw/2)*s2, size:sz, font, color:rgb(.5,.5,.5), opacity:.3, rotate:degrees(a*180/Math.PI)});
+        }
+      });
+      bytes = await d.save(); name = cur==='pagenum' ? 'numbered.pdf' : 'watermarked.pdf';
+    }
+    else if(cur==='optimize'){
+      const d = await PDFDocument.load(await buf(files[0]), {updateMetadata:false});
+      bytes = await d.save({useObjectStreams:true}); name = 'optimized.pdf';
+    }
+    done(bytes, name);
+  }catch(e){
+    console.error(e);
+    say(/encrypt/i.test(e.message) ? 'This PDF is password-protected. Remove the password first.' : (e.message || 'Something went wrong. Try another file.'), 'err');
+  }
+  go.disabled = false;
+}
+
+function done(bytes, name){
+  if(blobUrl) URL.revokeObjectURL(blobUrl);
+  blobUrl = URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}));
+  const msg = $('#msg'); msg.className = 'ok';
+  msg.innerHTML = `Done. ${(bytes.length/1024/1024).toFixed(2)} MB<br><br>`;
+  const a = document.createElement('a');
+  a.href = blobUrl; a.download = name; a.className = 'btn alt'; a.textContent = 'Download ' + name;
+  a.style.cssText = 'display:inline-block;text-decoration:none;line-height:20px';
+  msg.appendChild(a);
+}
+
+// 3D tilt on pointer devices
+if(matchMedia('(hover:hover)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+  grid.addEventListener('pointermove',e=>{
+    const b=e.target.closest('.tool:not(.soon)'); if(!b) return;
+    const r=b.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    b.style.transform=`rotateX(${-y*14}deg) rotateY(${x*14}deg) translateY(-3px)`;
+  });
+  grid.addEventListener('pointerout',e=>{const b=e.target.closest('.tool'); if(b) b.style.transform='';});
+}
+async function toJpg(){
+  if(!window.pdfjsLib) throw new Error('PDF engine failed to load. Check your connection.');
+  const pdf = await pdfjsLib.getDocument({data: await buf(files[0])}).promise;
+  const msg = $('#msg'); msg.className='ok'; msg.innerHTML='';
+  for(let i=1;i<=pdf.numPages;i++){
+    msg.textContent = `Converting page ${i} of ${pdf.numPages}…`;
+    const page = await pdf.getPage(i), vp = page.getViewport({scale:2});
+    const c = document.createElement('canvas'); c.width=vp.width; c.height=vp.height;
+    await page.render({canvasContext:c.getContext('2d'), viewport:vp}).promise;
+    const blob = await new Promise(r => c.toBlob(r,'image/jpeg',.9));
+    c.width=c.height=0;
+    window.__imgs = (i===1?[]:window.__imgs||[]); window.__imgs.push(blob);
+  }
+  msg.innerHTML = `Done. ${pdf.numPages} image(s):<br><br>`;
+  window.__imgs.forEach((b,i) => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(b); a.download = `page-${i+1}.jpg`; a.className='btn alt';
+    a.textContent = `Download page ${i+1}`;
+    a.style.cssText='display:inline-block;text-decoration:none;line-height:20px;margin:0 8px 14px 0';
+    msg.appendChild(a);
+  });
+}
+
+function route(){ open(window.PAGE_TOOL || location.hash.slice(1)); }
+addEventListener('hashchange', route);
+route();
+</script>
+</body>
+</html>
