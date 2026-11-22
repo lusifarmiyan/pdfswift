@@ -109,7 +109,7 @@ $('#yr').textContent = new Date().getFullYear();
 // If the PDF engine (pdf-lib CDN) fails to load, the page must still show
 // the tool grid and a clear message instead of a blank page.
 const PDFLibOK = !!window.PDFLib;
-const {PDFDocument, degrees, StandardFonts, rgb} = window.PDFLib || {};
+const {PDFDocument, degrees, StandardFonts, rgb, PDFName, PDFArray} = window.PDFLib || {};
 if(window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
 const TOOLS = {
@@ -294,6 +294,10 @@ async function run(){
       if(cur==='watermark' && !txt.trim()) throw new Error('Enter the watermark text.');
       pages.forEach((p,i) => {
         const {width:w, height:h} = p.getSize();
+        // pdf-lib crashes ("Contents.push is not a function") when a page stores
+        // its content as a single stream — the normal case. Wrap it in an array first.
+        const cRef = p.node.get(PDFName.of('Contents'));
+        if(cRef && !(cRef instanceof PDFArray)) p.node.set(PDFName.of('Contents'), d.context.obj([cRef]));
         if(cur==='pagenum'){
           const t = `${i+1} / ${n}`, sz = 11, tw = font.widthOfTextAtSize(t,sz);
           const x = pos==='l' ? 30 : pos==='r' ? w-30-tw : (w-tw)/2;
