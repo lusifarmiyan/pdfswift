@@ -377,8 +377,8 @@ var blob=new THREE.Mesh(geo,mat(0xff7eb6)),grp=new THREE.Group();grp.add(blob);s
 var sats=[[.38,0xffe66d,2.4,.0],[.26,0x7cf0c2,2.9,2.1],[.2,0x8fd3ff,2.1,4.2]].map(function(s){
 var m=new THREE.Mesh(new THREE.SphereGeometry(s[0],32,24),mat(s[1]));m.userData={r:s[2],ph:s[3]};scene.add(m);return m;});
 var tx=0,ty=0,hov=0,press=0,pressT=0,narrow=false;
-function resize(){var w=canvas.clientWidth,h=canvas.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;narrow=w/h<.9||w<700;cam.position.z=narrow?9:7;cam.updateProjectionMatrix();
-grp.position.set(narrow?0:2.2,narrow?-2.2:-.2,0);grp.scale.setScalar(narrow?.95:1.15);}
+function resize(){var w=canvas.clientWidth,h=canvas.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;narrow=w/h<.9||w<700;cam.position.z=narrow?9:8;cam.updateProjectionMatrix();
+grp.position.set(narrow?0:1.6,narrow?-2.2:-.2,0);grp.scale.setScalar(narrow?.95:1.0);}
 addEventListener('resize',resize);resize();
 function pm(e){var r=canvas.getBoundingClientRect();tx=((e.clientX-r.left)/r.width)*2-1;ty=-(((e.clientY-r.top)/r.height)*2-1);hov=1;}
 addEventListener('pointermove',pm);
