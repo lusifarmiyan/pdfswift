@@ -89,7 +89,7 @@ footer{text-align:center;padding:2rem 1rem 3rem;font-size:13px;color:var(--soft)
 </style>
 </head>
 <body>
-<nav aria-label="Main"><a class="brand" href="index.html">PDFSwift</a><a href="#grid">Tools</a><a class="go" href="#work">Use a tool</a></nav>
+<nav aria-label="Main"><a class="brand" href="index.html">PDFSwift</a><a href="#grid">Tools</a><a class="go" href="merge-pdf.html">Merge PDF</a></nav>
 
 <header class="hero" id="top">
 <canvas id="c" aria-label="Interactive 3D puffy shape. Move or touch to squish it." role="img"></canvas>
@@ -101,10 +101,6 @@ footer{text-align:center;padding:2rem 1rem 3rem;font-size:13px;color:var(--soft)
 </header>
 
 <nav class="grid" id="grid" aria-label="PDF tools"></nav>
-
-<main id="work">
-  <div class="panel" id="panel"></div>
-</main>
 
 <section class="info">
   <h2>Why PDFSwift?</h2>
@@ -165,6 +161,7 @@ SOON.forEach(n => {
 });
 
 function open(k){
+  if(!document.getElementById('panel')) return;
   if(!TOOLS[k]) k = 'merge';
   cur = k; files = [];
   const t = TOOLS[k];
@@ -361,7 +358,7 @@ async function toJpg(){
 
 function route(){ open(window.PAGE_TOOL || location.hash.slice(1)); }
 addEventListener('hashchange', route);
-route();
+if(document.getElementById('panel')) route();
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
